@@ -3,7 +3,9 @@ A highly available Node.js web application in AWS cloud using RDS as database.
 
 
 
-## Architecture
+## Architecture  
+
+![alt text](https://github.com/MedEzzedine/HA-AWS-WebApp/blob/main/Project%20Screenshots/0.png?raw=true)
 
 The VPC follows best architecture practices by having a private and a public subnet in each availability zone. It contains the following resources:
 - **Auto scaling group:** Automatically spins up EC2 instances with User Data allowing it to download the source code from a github repository and then install all its dependencies.
