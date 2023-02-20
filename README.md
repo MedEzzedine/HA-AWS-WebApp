@@ -12,3 +12,6 @@ The VPC follows best architecture practices by having a private and a public sub
 - **Application Load Balancer:** Accepts HTTP requests from the public internet and redirects the traffic to the auto scaling group in the private subnets.
 - **AWS RDS for MySQL:** A fully managed relational database that offers high availability and redundancy. It is placed in the private subnet for security.
 - **Bastion host:** An EC2 instance situated in the public subnet that allows SSH access to the web servers for maintenance and patching.
+
+## To do
+Planning on adding a CloudFormation template to automate the infrastructure.
