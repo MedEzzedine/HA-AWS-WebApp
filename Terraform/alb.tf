@@ -1,14 +1,14 @@
 # Security group module for the ALB
 module "alb_http_sg" {
-    source  = "terraform-aws-modules/security-group/aws//modules/http-80"
-    version = "~> 4.0"
+  source  = "terraform-aws-modules/security-group/aws//modules/http-80"
+  version = "~> 4.0"
 
-    name        = var.alb_sg_name
-    vpc_id      = module.vpc.vpc_id
-    description = var.alb_sg_description
+  name        = var.alb_sg_name
+  vpc_id      = module.vpc.vpc_id
+  description = var.alb_sg_description
 
-    ingress_cidr_blocks = var.alb_sg_ingress_cidr_blocks
-    tags                = var.alb_sg_tags
+  ingress_cidr_blocks = var.alb_sg_ingress_cidr_blocks
+  tags                = var.alb_sg_tags
 }
 
 # Application Load Balancer module
@@ -16,8 +16,8 @@ module "alb" {
   source          = "terraform-aws-modules/alb/aws"
   version         = "~> 6.0"
   name            = var.alb_name
-  vpc_id          = module.vpc.vpc_id  
-  subnets         = module.vpc.public_subnets  
+  vpc_id          = module.vpc.vpc_id
+  subnets         = module.vpc.public_subnets
   security_groups = [module.alb_http_sg.security_group_id] # Attaching the SG to the ALB
 
   http_tcp_listeners = [

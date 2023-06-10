@@ -120,7 +120,7 @@ variable "asg_update_default_version" {
 variable "asg_image_id" {
   description = "Auto scaling group image id"
   type        = string
-  default     = "ami-004dac467bb041dc7"
+  default     = "ami-0f57ffe8bd04fa66d"
 }
 
 variable "asg_instance_type" {
@@ -132,7 +132,7 @@ variable "asg_instance_type" {
 variable "asg_ebs_optimized" {
   description = "Auto scaling group ebs optimized"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "asg_enable_monitoring" {
@@ -144,7 +144,7 @@ variable "asg_enable_monitoring" {
 variable "asg_create_iam_instance_profile" {
   description = "Auto scaling group create iam instance profile"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "asg_iam_role_name" {
@@ -266,25 +266,25 @@ variable "alb_tags" {
 variable "rds_sg_name" {
   description = "Relational database service security group name"
   type        = string
-  default     = "WebApp-rds-sg"
+  default     = "webapp-rds-sg"
 }
 
 variable "rds_sg_description" {
   description = "Relational database service security group description"
   type        = string
-  default     = "WebApp-rds-sg"
+  default     = "webapp-rds-sg"
 }
 
 variable "rds_sg_tags" {
   description = "Relational database service security group tags"
   type        = map(string)
-  default     = { "Name" = "WebApp-rds-sg", "created-by" = "terraform" }
+  default     = { "Name" = "webapp-rds-sg", "created-by" = "terraform" }
 }
 
 variable "rds_identifier" {
   description = "Relational database service identifier"
   type        = string
-  default     = "WebApp-rds"
+  default     = "webapp-rds"
 }
 
 variable "rds_mysql_engine" {
@@ -296,7 +296,7 @@ variable "rds_mysql_engine" {
 variable "rds_engine_version" {
   description = "Relational database service mysql engine version"
   type        = string
-  default     = "8.0.27"
+  default     = "8.0.31"
 }
 
 variable "rds_family" {
@@ -314,7 +314,7 @@ variable "rds_major_engine_version" {
 variable "rds_instance_class" {
   description = "Relational database service instance class"
   type        = string
-  default     = "db.t2.micro"
+  default     = "db.t3.micro"
 }
 
 variable "rds_allocated_storage" {
@@ -332,7 +332,7 @@ variable "rds_max_allocated_storage" {
 variable "rds_db_name" {
   description = "Relational database service db name"
   type        = string
-  default     = "WebApp_mysql"
+  default     = "customersdb"
 }
 
 variable "rds_username" {
@@ -350,7 +350,7 @@ variable "rds_port" {
 variable "rds_multi_az" {
   description = "Relational database service multi az"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "rds_maintenance_window" {
@@ -410,41 +410,41 @@ variable "rds_performance_insights_retention_period" {
 variable "rds_create_monitoring_role" {
   description = "Relational database service create monitoring role"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "rds_monitoring_interval" {
   description = "Relational database service monitoring interval"
   type        = number
-  default     = 60
+  default     = 0
 }
 
 variable "rds_tags" {
   description = "Relational database service tags"
   type        = map(string)
-  default     = { "Name" = "WebApp-rds", "created-by" = "terraform" }
+  default     = { "Name" = "webapp-rds", "created-by" = "terraform" }
 }
 
 variable "rds_db_instance_tags" {
   description = "Relational database service db instance tags"
   type        = map(string)
-  default     = { "Name" = "WebApp-rds", "created-by" = "terraform" }
+  default     = { "Name" = "webapp-rds", "created-by" = "terraform" }
 }
 
 variable "rds_db_option_group_tags" {
   description = "Relational database service db option group tags"
   type        = map(string)
-  default     = { "Name" = "WebApp-rds", "created-by" = "terraform" }
+  default     = { "Name" = "webapp-rds", "created-by" = "terraform" }
 }
 
 variable "rds_db_parameter_group_tags" {
   description = "Relational database service db parameter group tags"
   type        = map(string)
-  default     = { "Name" = "WebApp-rds", "created-by" = "terraform" }
+  default     = { "Name" = "webapp-rds", "created-by" = "terraform" }
 }
 
 variable "rds_db_subnet_group_tags" {
   description = "Relational database service db subnet group tags"
   type        = map(string)
-  default     = { "Name" = "WebApp-rds", "created-by" = "terraform" }
+  default     = { "Name" = "webapp-rds", "created-by" = "terraform" }
 }
